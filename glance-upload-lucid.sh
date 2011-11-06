@@ -8,7 +8,7 @@ if [ ! -f "lucid-server-cloudimg-amd64.tar.gz" ] ; then
 	wget http://cloud-images.ubuntu.com/lucid/current/lucid-server-cloudimg-amd64.tar.gz
 fi
 
-if [ ! -f "lucid-server-cloudimg-amd64.im"g ] ; then
+if [ ! -f "lucid-server-cloudimg-amd64.img" ] ; then
         echo "Extracting image"
 	tar xfzv lucid-server-cloudimg-amd64.tar.gz
 fi
