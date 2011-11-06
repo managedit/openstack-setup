@@ -1,5 +1,15 @@
 # All Services
 
+Install this PPA https://launchpad.net/~managedit/+archive/openstack
+
+   apt-add-repository -y ppa:managedit/openstack
+   
+   apt-get update
+   
+   apt-get install -y managedit-openstack-pin
+   
+   apt-get install -y python-mysqldb mysql-server
+
 Edit "settings" to suit..
 
 # Keystone
