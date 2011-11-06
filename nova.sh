@@ -14,7 +14,10 @@ mysql -h $MYSQL_HOST -u$MYSQL_USER -p$MYSQL_PASS -e 'CREATE DATABASE nova;'
 echo "$COUNT: Update nova.conf sql connection to '$MYSQL_CONN/nova'"
 COUNT=`expr $COUNT + 1`
 
-echo "$COUNT: Copy+Chmod+Set nova to use api-paste-keystone.ini"
+echo "$COUNT: Copy api-paste-keystone.ini to /etc/nova and chown nova:nova /etc/nova/api-paste-keystone.ini"
+COUNT=`expr $COUNT + 1`
+
+echo "$COUNT: Set nova to use keystonei by adding '--api_paste_config=api-paste-keystone.ini' to /etc/nova/nova.conf"
 COUNT=`expr $COUNT + 1`
 
 echo "$COUNT: Restart all nova services"
