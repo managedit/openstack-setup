@@ -18,4 +18,4 @@ echo "Uploading kernel"
 glance -A $TOKEN add name="ubuntu-oneiric-kernel" is_public=true container_format=aki disk_format=aki < oneiric-server-cloudimg-amd64-vmlinuz-virtual
 
 echo "Uploading image"
-glance -A $TOKEN add name="ubuntu-oneiric" is_public=true container_format=ami kernel_id=5 disk_format=ami < oneiric-server-cloudimg-amd64.img
+glance -A $TOKEN add name="ubuntu-oneiric" is_public=true container_format=ami kernel_id=1 disk_format=ami < oneiric-server-cloudimg-amd64.img
