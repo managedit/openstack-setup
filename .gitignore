@@ -1,0 +1,5 @@
+api-paste-keystone.ini
+keystone_data.sh
+keystone.log
+oneiric-server-cloudimg*
+lucid*

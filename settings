@@ -1,0 +1,26 @@
+# Settings
+MYSQL_USER="root"
+MYSQL_PASS="letmein"
+MYSQL_HOST="127.0.0.1"
+MYSQL_CONN="mysql://$MYSQL_USER:$MYSQL_PASS@$MYSQL_HOST"
+
+HOST_IP="127.0.0.1" # Do actually change me!
+ADMIN_PASSWORD="letmein"
+SERVICE_TOKEN="abcdef123" # Pick something random-ish A-Za-z0-9 only AFAIK
+
+BRIDGE_INTERFACE="eth1"
+
+REGION="dub01"
+
+# OS Stuf..
+export NOVA_PROJECT_ID="admin" # Tenant
+export NOVA_USERNAME="admin" # Username
+export NOVA_API_KEY=$ADMIN_PASSWORD
+export NOVA_URL="http://$HOST_IP:5000/v2.0/"
+export NOVA_VERSION=1.1
+export NOVA_REGION_NAME=$REGION
+
+# Misc ... 
+COUNT=1
+
+#set -o xtrace
