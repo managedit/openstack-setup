@@ -13,7 +13,7 @@ Install this PPA https://launchpad.net/~managedit/+archive/openstack
 
 Edit "settings" to suit..
 
-# Keystone
+## Install Keystone
 
 Run this, and do what it says!
 
@@ -23,7 +23,7 @@ then test with:
 
 > ./keystone-test.sh
 
-# Glance
+## Install Glance
 
 Run this, and do what it says!
 
@@ -33,7 +33,7 @@ then test with:
 
 > ./glance-test.sh
 
-# Nova
+## Install Nova
 
 Run this, and do what it says!
 
@@ -43,7 +43,7 @@ then, you guessed it, test with:
 
 > ./nova-test.sh
 
-# Dashboard
+## Install Dashboard
 
 Run this, and do what it says!
 
