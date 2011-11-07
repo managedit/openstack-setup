@@ -24,3 +24,8 @@ export NOVA_REGION_NAME=$REGION
 COUNT=1
 
 #set -o xtrace
+
+if [ -f settings.local ]
+then
+  . settings.local
+fi
