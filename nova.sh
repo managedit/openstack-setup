@@ -28,3 +28,6 @@ COUNT=`expr $COUNT + 1`
 
 echo "$COUNT: Run nova-manage network create --multi_host T --network_size 16 --num_networks 16 --bridge_interface $BRIDGE_INTERFACE --fixed_range_v4 172.16.0.0/12 --label internal"
 COUNT=`expr $COUNT + 1`
+
+echo "(this is for VLAN networking .. go read the OS docs for other network types!)"
+
