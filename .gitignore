@@ -3,3 +3,4 @@ keystone_data.sh
 keystone.log
 oneiric-server-cloudimg*
 lucid*
+settings.local
