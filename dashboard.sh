@@ -3,7 +3,7 @@
 # Settings
 . settings
 
-#apt-get install -y openstack-dashboard
+apt-get install -y openstack-dashboard
 
 # Dashboard Setup
 
