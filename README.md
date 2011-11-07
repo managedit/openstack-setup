@@ -2,7 +2,9 @@
 
 These scripts install+setup OpenStack (an all in one server).
 
-# All Services
+# Common Stuff
+
+Edit "settings" to suit..
 
 Install this PPA https://launchpad.net/~managedit/+archive/openstack
 
@@ -10,8 +12,6 @@ Install this PPA https://launchpad.net/~managedit/+archive/openstack
 > apt-get update  
 > apt-get install -y managedit-openstack-pin  
 > apt-get install -y python-mysqldb mysql-server
-
-Edit "settings" to suit..
 
 ## Install Keystone
 
