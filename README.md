@@ -1,3 +1,7 @@
+# OpenStack Setup Scripts
+
+These scripts install+setup OpenStack (an all in one server).
+
 # All Services
 
 Install this PPA https://launchpad.net/~managedit/+archive/openstack
