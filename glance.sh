@@ -19,6 +19,9 @@ COUNT=`expr $COUNT + 1`
 echo "$COUNT: Copy glance-api.conf to /etc/glance/ (and chown glance:glance it)'"
 COUNT=`expr $COUNT + 1`
 
+echo "$COUNT: Run glance-manage db_sync"
+COUNT=`expr $COUNT + 1`
+
 echo "$COUNT: Restart glance-api and glance-registery"
 COUNT=`expr $COUNT + 1`
 
