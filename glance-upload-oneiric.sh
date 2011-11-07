@@ -8,7 +8,7 @@ if [ ! -f "oneiric-server-cloudimg-amd64.tar.gz" ] ; then
 	wget http://cloud-images.ubuntu.com/oneiric/current/oneiric-server-cloudimg-amd64.tar.gz
 fi
 
-if [ ! -f "oneiric-server-cloudimg-amd64.im"g ] ; then
+if [ ! -f "oneiric-server-cloudimg-amd64.img" ] ; then
         echo "Extracting image"
 	tar xfzv oneiric-server-cloudimg-amd64.tar.gz
 fi
