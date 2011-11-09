@@ -20,10 +20,10 @@ COUNT=`expr $COUNT + 1`
 echo "$COUNT: Set nova to use keystonei by adding '--api_paste_config=api-paste-keystone.ini' to /etc/nova/nova.conf"
 COUNT=`expr $COUNT + 1`
 
-echo "$COUNT: Restart all nova services"
+echo "$COUNT: Run nova-manage db sync"
 COUNT=`expr $COUNT + 1`
 
-echo "$COUNT: Run nova-manage db sync"
+echo "$COUNT: Restart all nova services"
 COUNT=`expr $COUNT + 1`
 
 echo "$COUNT: Run nova-manage network create --multi_host T --network_size 16 --num_networks 16 --bridge_interface $BRIDGE_INTERFACE --fixed_range_v4 172.16.0.0/12 --label internal"
