@@ -12,7 +12,7 @@ Install this PPA https://launchpad.net/~managedit/+archive/openstack
 > apt-get update  
 > apt-get install -y managedit-openstack-pin  
 
-On the MySQL / RabbitMQ Servers (Probably you're controller node)
+On the MySQL / RabbitMQ Servers (Probably your controller node)
 
 > apt-get install -y python-mysqldb mysql-server rabbitmq-server
 
