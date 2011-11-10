@@ -11,7 +11,7 @@ Install this PPA https://launchpad.net/~managedit/+archive/openstack
 > apt-add-repository -y ppa:managedit/openstack  
 > apt-get update  
 > apt-get install -y managedit-openstack-pin  
-> apt-get install -y python-mysqldb mysql-server
+> apt-get install -y python-mysqldb mysql-server rabbitmq-server
 
 ## Install Keystone
 
