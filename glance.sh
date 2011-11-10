@@ -3,7 +3,7 @@
 # Settings
 . settings
 
-apt-get install -y glance python-mysqldb mysql-server curl
+apt-get install -y glance python-mysqldb curl
 
 # Glance Setup
 mysql -h $MYSQL_HOST -u$MYSQL_USER -p$MYSQL_PASS -e 'DROP DATABASE IF EXISTS glance;'
