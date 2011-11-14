@@ -15,7 +15,7 @@ sed -e "s,%MYSQL_HOST%,$MYSQL_HOST,g" -i local_settings.py
 sed -e "s,%MYSQL_USER%,$MYSQL_USER,g" -i local_settings.py
 sed -e "s,%MYSQL_PASS%,$MYSQL_PASS,g" -i local_settings.py
 
-echo "$COUNT: Copy local_settings.py to /etc/openstack-dashboard/local/local_settings.py"
+echo "$COUNT: Copy local_settings.py to /etc/openstack-dashboard/local_settings.py"
 COUNT=`expr $COUNT + 1`
 
 echo "$COUNT: Run /usr/share/openstack-dashboard/dashboard/manage.py syncdb"
