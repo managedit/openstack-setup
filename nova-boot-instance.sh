@@ -3,4 +3,4 @@
 # Import Settings
 . settings
 
-nova boot --flavor 1 --image 3 "Test Server"
+nova boot --flavor 1 --image 2 "Test Server"
