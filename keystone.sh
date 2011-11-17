@@ -13,7 +13,10 @@ sed -e "s,%MYSQL_CONN%,$MYSQL_CONN,g" keystone.conf.tmpl > keystone.conf
 
 cp keystone.conf /etc/keystone/keystone.conf
 chown keystone /etc/keystone/keystone.conf
+
 service keystone restart
+
+sleep 5
 
 # Keystone Data
 sed -e "s,%HOST_IP%,$HOST_IP,g" keystone_data.sh.tmpl > keystone_data.sh
