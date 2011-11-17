@@ -8,7 +8,7 @@ MYSQL_CONN="mysql://$MYSQL_USER:$MYSQL_PASS@$MYSQL_HOST"
 HOST_IP="127.0.0.1" # Do actually change me!
 ADMIN_PASSWORD="letmein"
 SERVICE_TOKEN="abcdef123" # Pick something random-ish A-Za-z0-9 only. This is a password. Make it look like one.
-BRIDGE_INTERFACE="eth1"
+VLAN_INTERFACE="eth1"     # Interface that VLAN traffic should be bridged to.. 
 REGION="nova"
 
 # Dont change anything below here!
