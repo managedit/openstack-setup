@@ -1,15 +1,15 @@
-# MySQL Settings
+# MySQL Server Settings
 MYSQL_USER="root"
 MYSQL_PASS="letmein"
 MYSQL_HOST="127.0.0.1"
 MYSQL_CONN="mysql://$MYSQL_USER:$MYSQL_PASS@$MYSQL_HOST"
 
-# OpenStack Settings
+# Controller Node
 HOST_IP="127.0.0.1"       # Do actually change this! This should be an IP address accessible by your end users. Not 127.0.0.1.
+
+# Passwords
 ADMIN_PASSWORD="letmein"  # Password for the "admin" user
 SERVICE_TOKEN="abcdef123" # Pick something random-ish A-Za-z0-9 only. This is a password. Make it look like one.
-VLAN_INTERFACE="eth1"     # Interface that VLAN traffic should be bridged to.. 
-REGION="nova"             # Region name - "nova" is the default, and probably the most reliable withoit extra setup!
 
 # Networking and IPs
 PUBLIC_INTERFACE="eth0"   # Interface for Floating IP traffic
@@ -19,9 +19,11 @@ FIXED_RANGE_NET="172.16.0.0"
 FIXED_RANGE_BITS="12"
 FIXED_RANGE_MASK="255.240.0.0"
 
+# Misc
+REGION="nova"             # Region name - "nova" is the default, and probably the most reliable withoit extra setup!
+
 # Dont change anything below here!
 FIXED_RANGE="${FIXED_RANGE_NET}/${FIXED_RANGE_BITS}"
-
 export NOVA_PROJECT_ID="admin" # Tenant
 export NOVA_USERNAME="admin" # Username
 export NOVA_API_KEY=$ADMIN_PASSWORD
@@ -29,11 +31,9 @@ export NOVA_URL="http://$HOST_IP:5000/v2.0/"
 export NOVA_VERSION=1.1
 export NOVA_REGION_NAME=$REGION
 
-# Misc ... 
 COUNT=1
 
-#set -o xtrace
-
+# Load overrides from settings.local if it exists
 if [ -f settings.local ]
 then
   . settings.local
