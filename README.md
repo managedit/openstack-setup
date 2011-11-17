@@ -2,18 +2,18 @@
 
 These scripts install+setup OpenStack (an all in one server).
 
-# All Servers
+# Do this on all servers
 
 Edit "settings" to suit..
 
 Install this PPA https://launchpad.net/~managedit/+archive/openstack
 
-> apt-get install python-software-properties  
+> apt-get install -y python-software-properties  
 > apt-add-repository -y ppa:managedit/openstack  
-> apt-get update  
+> apt-get update
 > apt-get install -y managedit-openstack-pin  
 
-On the MySQL / RabbitMQ Servers (Probably your controller node)
+# Do this on On the MySQL / RabbitMQ Servers (Probably your controller node)
 
 > apt-get install -y python-mysqldb mysql-server rabbitmq-server
 
