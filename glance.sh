@@ -20,17 +20,17 @@ chown glance:glance /etc/glance/glance-api.conf
 
 service glance-api restart
 sleep 2
-service glance-registery restart
+service glance-registry restart
 sleep 2
 
 glance-manage db_sync
 
 service glance-api restart
 sleep 2
-service glance-registery restart
+service glance-registry restart
 sleep 2
 
-#./glance-upload-oneiric.sh
-#./glance-upload-lucid.sh
+./glance-upload-oneiric.sh
+./glance-upload-lucid.sh
 
 
