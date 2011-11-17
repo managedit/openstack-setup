@@ -8,6 +8,7 @@ Edit "settings" to suit..
 
 Install this PPA https://launchpad.net/~managedit/+archive/openstack
 
+> apt-get install python-software-properties  
 > apt-add-repository -y ppa:managedit/openstack  
 > apt-get update  
 > apt-get install -y managedit-openstack-pin  
