@@ -5,7 +5,7 @@ MYSQL_HOST="127.0.0.1"
 MYSQL_CONN="mysql://$MYSQL_USER:$MYSQL_PASS@$MYSQL_HOST"
 
 # OpenStack Settings
-HOST_IP="127.0.0.1"       # Do actually change this!
+HOST_IP="127.0.0.1"       # Do actually change this! This should be an IP address accessible by your end users. Not 127.0.0.1.
 ADMIN_PASSWORD="letmein"  # Password for the "admin" user
 SERVICE_TOKEN="abcdef123" # Pick something random-ish A-Za-z0-9 only. This is a password. Make it look like one.
 VLAN_INTERFACE="eth1"     # Interface that VLAN traffic should be bridged to.. 
