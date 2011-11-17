@@ -8,9 +8,6 @@ apt-get install -y nova-api nova-compute nova-network python-mysqldb mysql-clien
 # Nova Setup
 sed -e "s,999888777666,$SERVICE_TOKEN,g" api-paste-keystone.ini.tmpl > api-paste-keystone.ini
 
-mysql -h $MYSQL_HOST -u$MYSQL_USER -p$MYSQL_PASS -e 'DROP DATABASE IF EXISTS nova;'
-mysql -h $MYSQL_HOST -u$MYSQL_USER -p$MYSQL_PASS -e 'CREATE DATABASE nova;'
-
 # Nova Config
 sed -e "s,%HOST_IP%,$HOST_IP,g" nova.conf.tmpl > nova.conf
 sed -e "s,%VLAN_INTERFACE%,$VLAN_INTERFACE,g" -i nova.conf
