@@ -11,8 +11,9 @@ service ntp restart
 sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mysql/my.cnf
 service mysql restart
 
-echo "Allow root remote access to SSH! Do this in another window!"
-echo "GRANT ALL PRIVILEGES ON . TO 'root'@'%' IDENTIFIED BY '$PASSWORD' WITH GRANT OPTION; FLUSH PRIVILEGES;"
+echo "\n\nAllow root remote access to SSH! Do this in another window!"
+echo "GRANT ALL PRIVILEGES ON . TO 'root'@'%' IDENTIFIED BY '$PASSWORD' WITH GRANT OPTION; FLUSH PRIVILEGES;\n\n"
+echo "Press any key to continue"
 read
 
 ./keystone.sh
