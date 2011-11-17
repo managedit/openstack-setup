@@ -11,7 +11,15 @@ SERVICE_TOKEN="abcdef123" # Pick something random-ish A-Za-z0-9 only. This is a 
 VLAN_INTERFACE="eth1"     # Interface that VLAN traffic should be bridged to.. 
 REGION="nova"             # Region name - "nova" is the default, and probably the most reliable withoit extra setup!
 
+# IPs
+FLOATING_RANGE="192.168.20.1/24"
+FIXED_RANGE_NET="172.16.0.0"
+FIXED_RANGE_BITS="12"
+FIXED_RANGE_MASK="255.240.0.0"
+
 # Dont change anything below here!
+FIXED_RANGE="${FIXED_RANGE_NET}/${FIXED_RANGE_BITS}"
+
 export NOVA_PROJECT_ID="admin" # Tenant
 export NOVA_USERNAME="admin" # Username
 export NOVA_API_KEY=$ADMIN_PASSWORD

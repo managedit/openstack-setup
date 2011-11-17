@@ -24,7 +24,7 @@
 --s3_host=%HOST_IP%
 --osapi_host=%HOST_IP%
 --rabbit_host=%HOST_IP%
---dmz_net=172.16.0.0
---dmz_mask=255.240.0.0
---fixed_range=172.16.0.0/12
+--dmz_net=%FIXED_RANGE_NET%
+--dmz_mask=%FIXED_RANGE_MASK%
+--fixed_range=%FIXED_RANGE%
 --keystone_ec2_url=http://%HOST_IP%:5000/v2.0/ec2tokens

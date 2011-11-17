@@ -4,3 +4,9 @@ keystone.log
 oneiric-server-cloudimg*
 lucid*
 settings.local
+README.files
+glance-api.conf
+glance-registry.conf
+keystone.conf
+local_settings.py
+nova.conf

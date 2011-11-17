@@ -16,6 +16,9 @@ sed -e "s,%HOST_IP%,$HOST_IP,g" nova.conf.tmpl > nova.conf
 sed -e "s,%VLAN_INTERFACE%,$VLAN_INTERFACE,g" -i nova.conf
 sed -e "s,%REGION%,$REGION,g" -i nova.conf
 sed -e "s,%MYSQL_CONN%,$MYSQL_CONN,g" -i nova.conf
+sed -e "s,%FIXED_RANGE_MASK%,$FIXED_RANGE_MASK,g" -i nova.conf
+sed -e "s,%FIXED_RANGE_NET%,$FIXED_RANGE_NET,g" -i nova.conf
+sed -e "s,%FIXED_RANGE%,$FIXED_RANGE,g" -i nova.conf
 
 cp nova.conf api-paste-keystone.ini /etc/nova/
 
@@ -35,7 +38,4 @@ service nova-objectstore restart
 service nova-vncproxy restart
 service nova-ajax-console-proxy restart
 
-echo "$COUNT: Run nova-manage network create --multi_host T --network_size 16 --num_networks 16 --bridge_interface $VLAN_INTERFACE --fixed_range_v4 172.16.0.0/12 --label internal"
-COUNT=`expr $COUNT + 1`
-
-echo "(this is for VLAN networking .. go read the OS docs for other network types and dont forget to update /etc/nova/nova.conf!)"
+nova-manage network create --multi_host T --network_size 16 --num_networks 16 --bridge_interface $VLAN_INTERFACE --fixed_range_v4 $FIXED_RANGE --label internal
