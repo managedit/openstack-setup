@@ -38,7 +38,7 @@ Grant root remote access to MySQL
 
 ## Install Keystone
 
-Run this, and do what it says!
+Run this:
 
 > ./keystone.sh
 
@@ -48,7 +48,7 @@ then test with:
 
 ## Install Glance
 
-Run this, and do what it says!
+Run this:
 
 > ./glance.sh
 
@@ -60,13 +60,13 @@ then test with:
 
 ### Controller Node
 
-Run this, and do what it says!
+Run this:
 
 > ./nova-controller.sh
 
 ### Compute Node(s)
 
-Run this, and do what it says!
+Run this:
 
 > ./nova-compute.sh
 
@@ -76,7 +76,7 @@ Then test with:
 
 ## Install Dashboard
 
-Run this, and do what it says!
+Run this:
 
 > ./dashboard.sh
 
