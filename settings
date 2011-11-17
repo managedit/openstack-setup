@@ -11,7 +11,9 @@ SERVICE_TOKEN="abcdef123" # Pick something random-ish A-Za-z0-9 only. This is a 
 VLAN_INTERFACE="eth1"     # Interface that VLAN traffic should be bridged to.. 
 REGION="nova"             # Region name - "nova" is the default, and probably the most reliable withoit extra setup!
 
-# IPs
+# Networking and IPs
+PUBLIC_INTERFACE="eth0"   # Interface for Floating IP traffic
+VLAN_INTERFACE="eth1"     # Interface for Fixed IP VLAN traffic
 FLOATING_RANGE="192.168.20.1/24"
 FIXED_RANGE_NET="172.16.0.0"
 FIXED_RANGE_BITS="12"

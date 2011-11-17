@@ -10,6 +10,7 @@ sed -e "s,999888777666,$SERVICE_TOKEN,g" api-paste-keystone.ini.tmpl > api-paste
 
 # Nova Config
 sed -e "s,%HOST_IP%,$HOST_IP,g" nova.conf.tmpl > nova.conf
+sed -e "s,%PUBLIC_INTERFACE%,$PUBLIC_INTERFACE,g" -i nova.conf
 sed -e "s,%VLAN_INTERFACE%,$VLAN_INTERFACE,g" -i nova.conf
 sed -e "s,%REGION%,$REGION,g" -i nova.conf
 sed -e "s,%MYSQL_CONN%,$MYSQL_CONN,g" -i nova.conf
