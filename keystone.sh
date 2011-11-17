@@ -12,7 +12,7 @@ mysql -h $MYSQL_HOST -u$MYSQL_USER -p$MYSQL_PASS -e 'CREATE DATABASE keystone;'
 sed -e "s,%MYSQL_CONN%,$MYSQL_CONN,g" keystone.conf.tmpl > keystone.conf
 
 cp keystone.conf /etc/keystone/keystone.conf
-chown keystone:keystone /etc/keystone/keystone.conf
+chown keystone /etc/keystone/keystone.conf
 service keystone restart
 
 # Keystone Data
