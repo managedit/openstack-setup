@@ -3,6 +3,7 @@
 # Settings
 . settings
 
+apt-get install -y libapache2-mod-wsgi
 apt-get install -y openstack-dashboard
 
 # Dashboard Setup
