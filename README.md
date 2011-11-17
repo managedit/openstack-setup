@@ -27,7 +27,11 @@ Install MySQL, RabbitMQ and ntp
 > sed -i 's/server ntp.ubuntu.com/server ntp.ubuntu.com n\server 127.127.1.0 n\fudge 127.127.1.0 stratum 10/g' /etc/ntp.conf  
 > service ntp restart  
 > sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mysql/my.cnf  
-> service mysql restart
+> service mysql restart  
+
+Grant root remote access to MySQL
+
+> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '$PASSWORD' WITH GRANT OPTION; FLUSH PRIVILEGES;
 
 ## Install Keystone
 
