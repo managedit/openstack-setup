@@ -1,0 +1,14 @@
+NOVA_HOST=%HOST_IP%
+GLANCE_HOST=%HOST_IP%
+export NOVA_USERNAME="admin"           # Username
+export NOVA_PROJECT_ID="admin"         # Tenant
+export NOVA_API_KEY="%ADMIN_PASSWORD%" # Password
+export NOVA_REGION_NAM"%REGION%"     # Nova region
+
+# Common Stuff (Don't Change me!)
+export NOVA_URL="http://%NOVA_HOST%:5000/v2.0/"
+export NOVA_VERSION="1.1"
+export EC2_URL="http://%NOVA_HOST%:8773/services/Cloud"
+export EC2_ACCESS_KEY="$NOVA_USERNAME:$NOVA_PROJECT_ID"
+export EC2_SECRET_KEY="$NOVA_API_KEY"
+export S3_URL="http://%GLANCE_HOST%:3333"
