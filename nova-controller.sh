@@ -3,7 +3,7 @@
 # Settings
 . settings
 
-apt-get install -y nova-api nova-scheduler nova-objectstore nova-vncproxy python-mysqldb mysql-client curl
+apt-get install -y nova-api nova-scheduler nova-objectstore nova-vncproxy nova-ajax-console-proxy python-mysqldb mysql-client curl
 
 # Nova Setup
 sed -e "s,999888777666,$SERVICE_TOKEN,g" api-paste-keystone.ini.tmpl > api-paste-keystone.ini
