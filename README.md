@@ -15,7 +15,7 @@ Install this PPA https://launchpad.net/~managedit/+archive/openstack
 
 Install and configure NTP
 
-> apt-get install ntp  
+> apt-get install -y ntp  
 
 (Todo: Configure nodes to use controller as NTP source)
 
