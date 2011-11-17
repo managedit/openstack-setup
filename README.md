@@ -13,9 +13,21 @@ Install this PPA https://launchpad.net/~managedit/+archive/openstack
 > apt-get update
 > apt-get install -y managedit-openstack-pin  
 
-# Do this on On the MySQL / RabbitMQ Servers (Probably your controller node)
+Install and configure NTP
 
-> apt-get install -y python-mysqldb mysql-server rabbitmq-server
+> apt-get install ntp  
+
+(Todo: Configure nodes to use controller as NTP source)
+
+# Do this on On the MySQL / RabbitMQ / NTP Servers (Probably your controller node)
+
+Install MySQL, RabbitMQ and ntp
+
+> apt-get install -y python-mysqldb mysql-server rabbitmq-server  
+> sed -i 's/server ntp.ubuntu.com/server ntp.ubuntu.com n\server 127.127.1.0 n\fudge 127.127.1.0 stratum 10/g' /etc/ntp.conf  
+> service ntp restart  
+> sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mysql/my.cnf  
+> service mysql restart
 
 ## Install Keystone
 
