@@ -13,21 +13,20 @@ sed -e "s,%SERVICE_TOKEN%,$SERVICE_TOKEN,g" glance-registry.conf.tmpl > glance-r
 sed -e "s,%MYSQL_CONN%,$MYSQL_CONN,g" -i glance-registry.conf
 sed -e "s,%SERVICE_TOKEN%,$SERVICE_TOKEN,g" glance-api.conf.tmpl > glance-api.conf
 
-echo "$COUNT: Copy glance-registry.conf to /etc/glance/ (and chown glance:glance it)'"
-COUNT=`expr $COUNT + 1`
+cp glance-registry.conf glance-api.conf /etc/glance/
 
-echo "$COUNT: Copy glance-api.conf to /etc/glance/ (and chown glance:glance it)'"
-COUNT=`expr $COUNT + 1`
+chown glance:glance /etc/glance/glance-registry.conf
+chown glance:glance /etc/glance/glance-api.conf
 
-echo "$COUNT: Run glance-manage db_sync"
-COUNT=`expr $COUNT + 1`
+service glance-api restart
+service glance-registery restart
 
-echo "$COUNT: Restart glance-api and glance-registery"
-COUNT=`expr $COUNT + 1`
+glance-manage db_sync
 
-echo "$COUNT: Run glance-upload-oneiric.sh"
-COUNT=`expr $COUNT + 1`
+service glance-api restart
+service glance-registery restart
 
-echo "$COUNT: Run glance-upload-lucid.sh"
-COUNT=`expr $COUNT + 1`
+./glance-upload-oneiric.sh
+./glance-upload-lucid.sh
+
 

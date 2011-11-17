@@ -19,13 +19,14 @@ sed -e "s,%MYSQL_CONN%,$MYSQL_CONN,g" -i nova.conf
 
 # Fix dnsmasq
 sed -e "s,ENABLED=1,ENABLED=0,g" -i /etc/default/dnsmasq
+
 killall dnsmasq
+sleep 1
+killall -9 dnsmasq
 
-echo "$COUNT: Copy nova.conf to /etc/nova and chown nova:nova /etc/nova/nova.conf"
-COUNT=`expr $COUNT + 1`
+cp nova.conf api-paste-keystone.ini /etc/nova/
+chown nova:nova /etc/nova/nova.conf /etc/nova/api-paste-keystone.ini
 
-echo "$COUNT: Copy api-paste-keystone.ini to /etc/nova and chown nova:nova /etc/nova/api-paste-keystone.ini"
-COUNT=`expr $COUNT + 1`
-
-echo "$COUNT: Restart all nova services"
-COUNT=`expr $COUNT + 1`
+service nova-api restart
+service nova-network restart
+service nova-compute restart
