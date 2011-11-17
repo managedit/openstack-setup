@@ -5,11 +5,11 @@ MYSQL_HOST="127.0.0.1"
 MYSQL_CONN="mysql://$MYSQL_USER:$MYSQL_PASS@$MYSQL_HOST"
 
 # OpenStack Settings
-HOST_IP="127.0.0.1" # Do actually change me!
-ADMIN_PASSWORD="letmein"
+HOST_IP="127.0.0.1"       # Do actually change this!
+ADMIN_PASSWORD="letmein"  # Password for the "admin" user
 SERVICE_TOKEN="abcdef123" # Pick something random-ish A-Za-z0-9 only. This is a password. Make it look like one.
 VLAN_INTERFACE="eth1"     # Interface that VLAN traffic should be bridged to.. 
-REGION="nova"
+REGION="nova"             # Region name - "nova" is the default, and probably the most reliable withoit extra setup!
 
 # Dont change anything below here!
 export NOVA_PROJECT_ID="admin" # Tenant
