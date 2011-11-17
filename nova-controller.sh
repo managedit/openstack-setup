@@ -21,6 +21,8 @@ cp nova.conf api-paste-keystone.ini /etc/nova/
 
 chown nova:nova /etc/nova/nova.conf /etc/nova/api-paste-keystone.ini
 
+service nova-api restart
+
 nova-manage db sync
 
 service nova-api restart
