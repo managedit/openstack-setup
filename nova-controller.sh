@@ -23,7 +23,11 @@ chown nova:nova /etc/nova/nova.conf /etc/nova/api-paste-keystone.ini
 
 service nova-api restart
 
+sleep 5
+
 nova-manage db sync
+
+sleep 5
 
 service nova-api restart
 service nova-scheduler restart
