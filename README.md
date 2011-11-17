@@ -2,7 +2,7 @@
 
 These scripts install+setup OpenStack (an all in one server, or all bar compute + compute nodes).
 
-** This only suports VLAN networking where each server has 2x network cards **
+**This only suports VLAN networking where each server has 2x network cards**  
 It could be changed for others, but out of the box, thats what it does.
 
 # Do this on all servers
