@@ -1,6 +1,6 @@
 # OpenStack Setup Scripts
 
-These scripts install+setup OpenStack (an all in one server).
+These scripts install+setup OpenStack (an all in one server, or all bar compute + compute nodes).
 
 # Do this on all servers
 
@@ -39,11 +39,19 @@ then test with:
 
 ## Install Nova
 
+### Controller Node
+
 Run this, and do what it says!
 
-> ./nova.sh
+> ./nova-controller.sh
 
-then, you guessed it, test with:
+### Compute Node(s)
+
+Run this, and do what it says!
+
+> ./nova-compute.sh
+
+Then test with:
 
 > ./nova-test.sh
 
