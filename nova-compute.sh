@@ -28,5 +28,7 @@ cp nova.conf api-paste-keystone.ini /etc/nova/
 chown nova:nova /etc/nova/nova.conf /etc/nova/api-paste-keystone.ini
 
 service nova-api restart
-service nova-network start
-service nova-compute start
+service nova-network restart
+service nova-compute restart
+
+echo "*** MANUALLY RESTART ALL NOVA SERVICES ***"
