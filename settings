@@ -1,3 +1,8 @@
+#####################################################################
+# You can create a  settings.local file and override these settings #
+# from there, allowing you to `git pull` without conflicts!         #
+#####################################################################
+
 # MySQL Server Settings
 MYSQL_USER="root"
 MYSQL_PASS="letmein"
