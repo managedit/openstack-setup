@@ -28,7 +28,7 @@ keystone-manage endpointTemplates add %REGION% keystone http://%HOST_IP%:5000/v2
 # keystone-manage endpointTemplates add %REGION% swift http://%HOST_IP%:8080/v1/AUTH_%tenant_id% http://%HOST_IP%:8080/ http://%HOST_IP%:8080/v1/AUTH_%tenant_id% 1 1
 
 # Tokens
-$BIN_DIR/keystone-manage $* token add %SERVICE_TOKEN% admin admin 2015-02-05T00:00
+$BIN_DIR/keystone-manage token add %SERVICE_TOKEN% admin admin 2015-02-05T00:00
 
 # EC2 related creds - note we are setting the token to user_password
 # but keystone doesn't parse them - it is just a blob from keystone's 
