@@ -7,7 +7,6 @@
 MYSQL_USER="root"
 MYSQL_PASS="letmein"
 MYSQL_HOST="127.0.0.1"
-MYSQL_CONN="mysql://$MYSQL_USER:$MYSQL_PASS@$MYSQL_HOST"
 
 # Controller Node
 HOST_IP="127.0.0.1"       # Do actually change this! This should be an IP address accessible by your end users. Not 127.0.0.1.
@@ -27,7 +26,14 @@ FIXED_RANGE_MASK="255.240.0.0"
 # Misc
 REGION="nova"             # Region name - "nova" is the default, and probably the most reliable withoit extra setup!
 
+# Load overrides from settings.local if it exists
+if [ -f settings.local ]
+then
+  . settings.local
+fi
+
 # Dont change anything below here!
+MYSQL_CONN="mysql://$MYSQL_USER:$MYSQL_PASS@$MYSQL_HOST"
 FIXED_RANGE="${FIXED_RANGE_NET}/${FIXED_RANGE_BITS}"
 export NOVA_PROJECT_ID="admin" # Tenant
 export NOVA_USERNAME="admin" # Username
@@ -37,9 +43,3 @@ export NOVA_VERSION=1.1
 export NOVA_REGION_NAME=$REGION
 
 COUNT=1
-
-# Load overrides from settings.local if it exists
-if [ -f settings.local ]
-then
-  . settings.local
-fi
