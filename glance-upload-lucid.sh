@@ -15,7 +15,8 @@ fi
 
 TOKEN=`./obtain-token.sh`
 echo "Uploading kernel"
-glance -A $TOKEN add name="ubuntu-lucid-kernel" is_public=true container_format=aki disk_format=aki < lucid-server-cloudimg-amd64-vmlinuz-virtual
+RVAL=`glance -A $TOKEN add name="ubuntu-lucid-kernel" is_public=true container_format=aki disk_format=aki < lucid-server-cloudimg-amd64-vmlinuz-virtual`
+KERNEL_ID=`echo $RVAL | cut -d":" -f2 | tr -d " "`
 
 echo "Uploading image"
-glance -A $TOKEN add name="ubuntu-lucid" is_public=true container_format=ami kernel_id=3 disk_format=ami < lucid-server-cloudimg-amd64.img
+glance -A $TOKEN add name="ubuntu-lucid" is_public=true container_format=ami kernel_id=$KERNEL_ID disk_format=ami < lucid-server-cloudimg-amd64.img
