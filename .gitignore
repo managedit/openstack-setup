@@ -1,8 +1,9 @@
 api-paste-keystone.ini
 keystone_data.sh
 keystone.log
-oneiric-server-cloudimg*
+oneiric*
 lucid*
+ttylinux*
 settings.local
 README.files
 glance-api.conf
