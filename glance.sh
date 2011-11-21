@@ -32,6 +32,7 @@ sleep 2
 
 ./glance-upload-ttylinux.sh
 ./glance-upload-oneiric.sh
-./glance-upload-lucid.sh
+./glance-upload-loader.sh
+./glance-upload-lucid-loader.sh
 
 

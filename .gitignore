@@ -11,3 +11,5 @@ glance-registry.conf
 keystone.conf
 local_settings.py
 nova.conf
+kernels/
+loader*
