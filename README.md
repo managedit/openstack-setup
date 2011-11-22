@@ -5,6 +5,8 @@ These scripts install+setup OpenStack (an all in one server, or all bar compute 
 **This only suports VLAN networking where each server has 2x network cards**  
 It could be changed for others, but out of the box, thats what it does.
 
+NOTE: These scripts do NOT secure your setup. Every service connects to MySQL as root, The default RabbitMQ account is used etc. Is is **your** job to handle that kind of stuff after you have a quick and dirty, but working install done.
+
 # Do this on all servers
 
 Edit "settings" to suit..
