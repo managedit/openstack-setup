@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. settings
+
 apt-get install -y python-software-properties
 apt-add-repository -y ppa:managedit/openstack
 apt-get update
@@ -11,10 +13,7 @@ service ntp restart
 sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mysql/my.cnf
 service mysql restart
 
-echo "\n\nAllow root remote access to MySQL! Do this in another window!"
-echo "GRANT ALL PRIVILEGES ON . TO 'root'@'%' IDENTIFIED BY 'PASSWORD' WITH GRANT OPTION; FLUSH PRIVILEGES;\n\n"
-echo "Press any key to continue"
-read
+echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '${MYSQL_PASS}' WITH GRANT OPTION; FLUSH PRIVILEGES;" | mysql -u $MYSQL_USER -p$MYSQL_PASS
 
 ./keystone.sh
 sleep 15
