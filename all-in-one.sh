@@ -19,7 +19,7 @@ service ntp restart
 sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mysql/my.cnf
 service mysql restart
 
-echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '${MYSQL_ROOT_PASS}' WITH GRANT OPTION; FLUSH PRIVILEGES;" | mysql -u $MYSQL_USER -p$MYSQL_ROOT_PASS
+echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '${MYSQL_ROOT_PASS}' WITH GRANT OPTION; FLUSH PRIVILEGES;" | mysql -u root -p$MYSQL_ROOT_PASS
 
 sleep 2
 
