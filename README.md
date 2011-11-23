@@ -10,8 +10,6 @@ NOTE: These scripts do NOT secure your setup. Every service connects to MySQL as
 
 # All in one server (You can add more later...)
 
-Prep:
-
 1. Install ubuntu 11.10
 2. Login as root
 3. Install git (apt-get install git)
