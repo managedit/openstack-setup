@@ -7,7 +7,18 @@ It could be changed for others, but out of the box, thats what it does.
 
 NOTE: These scripts do NOT secure your setup. Every service connects to MySQL as root, The default RabbitMQ account is used etc. Is is **your** job to handle that kind of stuff after you have a quick and dirty, but working install done.
 
-# Do this on all servers
+
+# All in one server (You can add more later...)
+
+Edit "settings" to suit.. (or create settings.local with overrides)
+
+Run:
+
+    ./all-in-one.sh
+
+# Multiple Servers
+
+## Do this on all servers
 
 Edit "settings" to suit..
 
@@ -24,7 +35,7 @@ Install and configure NTP
 
 (Todo: Configure nodes to use controller as NTP source)
 
-# Do this on On the MySQL / RabbitMQ / NTP Servers (Probably your controller node)
+## Do this on On the MySQL / RabbitMQ / NTP Servers (Probably your controller node)
 
 Install MySQL, RabbitMQ and ntp
 
@@ -38,7 +49,7 @@ Grant root remote access to MySQL
 
     GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '$PASSWORD' WITH GRANT OPTION; FLUSH PRIVILEGES;
 
-## Install Keystone
+### Install Keystone
 
 Run this:
 
@@ -48,7 +59,7 @@ then test with:
 
     ./keystone-test.sh
 
-## Install Glance
+### Install Glance
 
 Run this:
 
@@ -58,15 +69,15 @@ then test with:
 
     ./glance-test.sh
 
-## Install Nova
+### Install Nova
 
-### Controller Node
+#### Controller Node
 
 Run this:
 
     ./nova-controller.sh
 
-### Compute Node(s)
+#### Compute Node(s)
 
 Run this:
 
@@ -76,7 +87,7 @@ Then test with:
 
     ./nova-test.sh
 
-## Install Dashboard
+### Install Dashboard
 
 Run this:
 
