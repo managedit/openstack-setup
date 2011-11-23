@@ -4,9 +4,12 @@
 #####################################################################
 
 # MySQL Server Settings
-MYSQL_USER="root"
-MYSQL_PASS="letmein"
 MYSQL_HOST="127.0.0.1"
+MYSQL_ROOT_PASS="letmein"
+MYSQL_NOVA_PSSS="letmeinN"
+MYSQL_GLANCE_PASS="letmeinG"
+MYSQL_KEYSTONE_PASS="letmeinK"
+MYSQL_HORIZON_PASS="letmeinH"
 
 # Controller Node
 HOST_IP="127.0.0.1"       # Do actually change this! This should be an IP address accessible by your end users. Not 127.0.0.1.
@@ -33,7 +36,6 @@ then
 fi
 
 # Dont change anything below here!
-MYSQL_CONN="mysql://$MYSQL_USER:$MYSQL_PASS@$MYSQL_HOST"
 FIXED_RANGE="${FIXED_RANGE_NET}/${FIXED_RANGE_BITS}"
 export NOVA_PROJECT_ID="admin" # Tenant
 export NOVA_USERNAME="admin" # Username

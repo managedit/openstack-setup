@@ -6,7 +6,7 @@
 --force_dhcp_release=True
 --use_deprecated_auth
 --verbose
---sql_connection=%MYSQL_CONN%/nova
+--sql_connection=mysql://nova:%MYSQL_NOVA_PASS%@%MYSQL_HOST%/nova
 --public_interface=%PUBLIC_INTERFACE%
 --vlan_interface=%VLAN_INTERFACE%
 --zone_name=%REGION%

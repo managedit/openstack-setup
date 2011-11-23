@@ -24,7 +24,7 @@ use_syslog = False
 # SQLAlchemy connection string for the reference implementation
 # registry server. Any valid SQLAlchemy connection string is fine.
 # See: http://www.sqlalchemy.org/docs/05/reference/sqlalchemy/connections.html#sqlalchemy.create_engine
-sql_connection = %MYSQL_CONN%/glance
+sql_connection = mysql://glance:%MYSQL_GLANCE_PASS%@%MYSQL_HOST%/glance
 
 # Period in seconds after which SQLAlchemy should reestablish its connection
 # to the database.

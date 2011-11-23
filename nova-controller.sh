@@ -8,14 +8,17 @@ apt-get install -y nova-api nova-scheduler nova-objectstore nova-vncproxy nova-a
 # Nova Setup
 sed -e "s,999888777666,$SERVICE_TOKEN,g" api-paste-keystone.ini.tmpl > api-paste-keystone.ini
 
-mysql -h $MYSQL_HOST -u$MYSQL_USER -p$MYSQL_PASS -e 'DROP DATABASE IF EXISTS nova;'
-mysql -h $MYSQL_HOST -u$MYSQL_USER -p$MYSQL_PASS -e 'CREATE DATABASE nova;'
+mysql -h $MYSQL_HOST -u$MYSQL_USER -p$MYSQL_ROOT_PASS -e 'DROP DATABASE IF EXISTS nova;'
+mysql -h $MYSQL_HOST -u$MYSQL_USER -p$MYSQL_ROOT_PASS -e 'CREATE DATABASE nova;'
+
+echo "GRANT ALL ON nova.* TO 'nova'@'%' IDENTIFIED BY '$MYSQL_NOVA_PASS';" | mysql -h $MYSQL_HOST -u$MYSQL_USER -p$MYSQL_ROOT_PASS
 
 # Nova Config
 sed -e "s,%HOST_IP%,$HOST_IP,g" nova.conf.tmpl > nova.conf
 sed -e "s,%VLAN_INTERFACE%,$VLAN_INTERFACE,g" -i nova.conf
 sed -e "s,%REGION%,$REGION,g" -i nova.conf
-sed -e "s,%MYSQL_CONN%,$MYSQL_CONN,g" -i nova.conf
+sed -e "s,%MYSQL_HOST%,$MYSQL_HOST,g" -i nova.conf
+sed -e "s,%MYSQL_NOVA_PASS%,$MYSQL_NOVA_PASS,g" -i nova.conf
 sed -e "s,%FIXED_RANGE_MASK%,$FIXED_RANGE_MASK,g" -i nova.conf
 sed -e "s,%FIXED_RANGE_NET%,$FIXED_RANGE_NET,g" -i nova.conf
 sed -e "s,%FIXED_RANGE%,$FIXED_RANGE,g" -i nova.conf

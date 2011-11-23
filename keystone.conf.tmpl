@@ -51,7 +51,7 @@ hash-password = True
 # SQLAlchemy connection string for the reference implementation registry
 # server. Any valid SQLAlchemy connection string is fine.
 # See: http://bit.ly/ideIpI
-sql_connection = %MYSQL_CONN%/keystone
+sql_connection = mysql://keystone:%MYSQL_KEYSTONE_PASS%@%MYSQL_HOST%/keystone
 backend_entities = ['UserRoleAssociation', 'Endpoints', 'Role', 'Tenant',
                     'User', 'Credentials', 'EndpointTemplates', 'Token',
                     'Service']
