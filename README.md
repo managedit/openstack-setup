@@ -59,7 +59,7 @@ Install and configure NTP
 Install MySQL, RabbitMQ and ntp
 
     apt-get install -y python-mysqldb mysql-server rabbitmq-server  
-    sed -i 's/server ntp.ubuntu.com/server ntp.ubuntu.com n\server 127.127.1.0 n\fudge 127.127.1.0 stratum 10/g' /etc/ntp.conf  
+    sed -i 's/server ntp.ubuntu.com/server ntp.ubuntu.com\nserver 127.127.1.0\nfudge 127.127.1.0 stratum 10/g' /etc/ntp.conf  
     service ntp restart  
     sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mysql/my.cnf  
     service mysql restart  
