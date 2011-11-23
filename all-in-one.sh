@@ -2,6 +2,12 @@
 
 . settings
 
+echo "mysql-server-5.1 mysql-server/root_password password $MYSQL_PASS" > /tmp/mysql.preseed
+echo "mysql-server-5.1 mysql-server/root_password_again password $MYSQL_PASS" >> /tmp/mysql.preseed
+cat /tmp/mysql.preseed | debconf-set-selections
+
+rm /tmp/mysql.preseed
+
 apt-get install -y python-software-properties
 apt-add-repository -y ppa:managedit/openstack
 apt-get update
