@@ -12,7 +12,7 @@ MYSQL_KEYSTONE_PASS="letmeinK"
 MYSQL_HORIZON_PASS="letmeinH"
 
 # Controller Node
-HOST_IP="127.0.0.1"       # Do actually change this! This should be an IP address accessible by your end users. Not 127.0.0.1.
+HOST_IP="192.0.2.1"       # Do actually change this! This should be an IP address accessible by your end users. Not 127.0.0.1.
 
 # Passwords
 ADMIN_PASSWORD="letmein"  # Password for the "admin" user
