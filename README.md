@@ -11,13 +11,29 @@ NOTE: These scripts do NOT secure your setup. Every service connects to MySQL as
 # All in one server (You can add more later...)
 
 1. Install ubuntu 11.10
-2. Login as root
-3. Install git (apt-get install git)
-4. Clone scripts (git clone https://github.com/managedit/openstack-setup.git)
-5. Edit "settings" to suit.. (or create settings.local with overrides)
-6. Run: ./all-in-one.sh
-7. ...
-8. Profit!
+2. Setup /etc/network/interfaces (See sample below)
+3. Login as root
+4. Install git (apt-get install git)
+5. Clone scripts (git clone https://github.com/managedit/openstack-setup.git)
+6. Edit "settings" to suit.. (or create settings.local with overrides)
+7. Run: ./all-in-one.sh
+8. ...
+9. Profit!
+
+## Sample /etc/network/interfaces
+
+    auto eth0
+    iface eth0 inet static
+            address 192.0.2.2
+            netmask 255.255.255.0
+            network 192.0.2.0
+            broadcast 192.0.2.255
+            gateway 192.0.2.1
+    
+    # Bring up eth1 without an IP address (You can have one if you want, but the point here is its not needed)
+    auto eth1
+    iface eth1 inet manual
+            up ifconfig eth1 up 
 
 # Multiple Servers
 
