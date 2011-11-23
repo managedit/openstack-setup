@@ -9,7 +9,7 @@ apt-get install -y keystone python-mysqldb mysql-client curl
 mysql -h $MYSQL_HOST -u root -p$MYSQL_ROOT_PASS -e 'DROP DATABASE IF EXISTS keystone;'
 mysql -h $MYSQL_HOST -u root -p$MYSQL_ROOT_PASS -e 'CREATE DATABASE keystone;'
 
-echo "GRANT ALL ON keystone.* TO 'keystone'@'%' IDENTIFIED BY '$MYSQL_KEYSTONE_PASS'; FLUSH PRIVILEGES;" #| mysql -h $MYSQL_HOST -u root -p$MYSQL_ROOT_PASS
+echo "GRANT ALL ON keystone.* TO 'keystone'@'%' IDENTIFIED BY '$MYSQL_KEYSTONE_PASS'; FLUSH PRIVILEGES;" | mysql -h $MYSQL_HOST -u root -p$MYSQL_ROOT_PASS
 
 sed -e "s,%MYSQL_HOST%,$MYSQL_HOST,g" keystone.conf.tmpl > keystone.conf
 sed -e "s,%MYSQL_KEYSTONE_PASS%,$MYSQL_KEYSTONE_PASS,g" -i keystone.conf
