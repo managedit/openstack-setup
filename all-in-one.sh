@@ -21,6 +21,8 @@ service mysql restart
 
 echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '${MYSQL_ROOT_PASS}' WITH GRANT OPTION; FLUSH PRIVILEGES;" | mysql -u $MYSQL_USER -p$MYSQL_ROOT_PASS
 
+sleep 2
+
 ./keystone.sh
 sleep 15
 
