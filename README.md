@@ -20,7 +20,7 @@ Run:
 
 ## Do this on all servers
 
-Edit "settings" to suit..
+Edit "settings" to suit.. (or create settings.local with overrides)
 
 Install this PPA https://launchpad.net/~managedit/+archive/openstack
 
