@@ -41,5 +41,5 @@ service nova-objectstore restart
 service nova-vncproxy restart
 service nova-ajax-console-proxy restart
 
-nova-manage network create --multi_host T --network_size 16 --num_networks 16 --bridge_interface $VLAN_INTERFACE --fixed_range_v4 $FIXED_RANGE --label internal
+nova-manage network create --multi_host T --network_size $FIXED_RANGE_NETWORK_SIZE --num_networks $FIXED_RANGE_NETWORK_COUNT --bridge_interface $VLAN_INTERFACE --fixed_range_v4 $FIXED_RANGE --label internal
 nova-manage floating create --ip_range=$FLOATING_RANGE

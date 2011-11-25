@@ -25,6 +25,8 @@ FLOATING_RANGE="192.168.20.1/24"
 FIXED_RANGE_NET="172.16.0.0"
 FIXED_RANGE_BITS="12"
 FIXED_RANGE_MASK="255.240.0.0"
+FIXED_RANGE_NETWORK_SIZE="256"
+FIXED_RANGE_NETWROK_COUNT="16"
 
 # Misc
 REGION="nova"             # Region name - "nova" is the default, and probably the most reliable withoit extra setup!
