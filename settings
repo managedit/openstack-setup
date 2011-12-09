@@ -6,7 +6,7 @@
 # MySQL Server Settings
 MYSQL_HOST="127.0.0.1"
 MYSQL_ROOT_PASS="letmein"
-MYSQL_NOVA_PSSS="letmeinN"
+MYSQL_NOVA_PASS="letmeinN"
 MYSQL_GLANCE_PASS="letmeinG"
 MYSQL_KEYSTONE_PASS="letmeinK"
 MYSQL_HORIZON_PASS="letmeinH"
