@@ -3,7 +3,7 @@
 # Settings
 . settings
 
-apt-get install -y nova-api nova-compute nova-network python-keystone python-mysqldb mysql-client curl dnsmasq bridge-utils
+apt-get install -y nova-api nova-compute nova-network python-keystone python-mysqldb mysql-client curl
 
 # Nova Setup
 sed -e "s,999888777666,$SERVICE_TOKEN,g" api-paste-keystone.ini.tmpl > api-paste-keystone.ini
