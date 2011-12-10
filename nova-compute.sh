@@ -19,13 +19,6 @@ sed -e "s,%FIXED_RANGE_MASK%,$FIXED_RANGE_MASK,g" -i nova.conf
 sed -e "s,%FIXED_RANGE_NET%,$FIXED_RANGE_NET,g" -i nova.conf
 sed -e "s,%FIXED_RANGE%,$FIXED_RANGE,g" -i nova.conf
 
-# Fix dnsmasq
-sed -e "s,ENABLED=1,ENABLED=0,g" -i /etc/default/dnsmasq
-
-killall dnsmasq
-sleep 1
-killall -9 dnsmasq
-
 cp nova.conf api-paste-keystone.ini /etc/nova/
 chown nova:nova /etc/nova/nova.conf /etc/nova/api-paste-keystone.ini
 
