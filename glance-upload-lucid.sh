@@ -3,6 +3,10 @@
 # Import Settings
 . settings
 
+echo "Use glance-upload-loader.sh followed by glance-upload-lucid-loader.sh instead"
+
+exit 1
+
 if [ ! -f "lucid-server-cloudimg-amd64.tar.gz" ] ; then
 	echo "Downloading image"
 	wget http://cloud-images.ubuntu.com/lucid/current/lucid-server-cloudimg-amd64.tar.gz
