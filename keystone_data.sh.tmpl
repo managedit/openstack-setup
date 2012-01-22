@@ -7,14 +7,14 @@ keystone-manage tenant add admin
 keystone-manage user add admin %ADMIN_PASSWORD%
 
 # Roles
-keystone-manage role add admin
-keystone-manage role add member
-keystone-manage role add keystoneadmin
-keystone-manage role add keystoneserviceadmin
-keystone-manage role grant admin admin admin
-keystone-manage role grant admin admin
-keystone-manage role grant keystoneadmin admin
-keystone-manage role grant keystoneserviceadmin admin
+keystone-manage role add Admin
+keystone-manage role add Member
+keystone-manage role add KeystoneAdmin
+keystone-manage role add KeystoneServiceAdmin
+keystone-manage role grant Admin admin admin
+keystone-manage role grant Admin admin
+keystone-manage role grant KeystoneAdmin admin
+keystone-manage role grant KeystoneServiceAdmin admin
 
 # Services
 keystone-manage service add nova compute "Nova Compute Service"
