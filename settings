@@ -3,6 +3,9 @@
 # from there, allowing you to `git pull` without conflicts!         #
 #####################################################################
 
+# General Settings
+LIBVIRT_TYPE=${LIBVIRT_TYPE:-kvm} # Currently supports kvm or qemu
+
 # MySQL Server Settings
 MYSQL_HOST="127.0.0.1"
 MYSQL_ROOT_PASS="letmein"
