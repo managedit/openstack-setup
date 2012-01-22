@@ -10,12 +10,20 @@ NOTE: These scripts do NOT secure your setup. Every service connects to MySQL as
 
 # All in one server (You can add more later...)
 
+Requirements:
+
+1. **Two** network interfaces. (If installing in a VM, just add a second "Host-Only" NIC)
+2. VLAN capable switch (if you want to use more than 1 compute node)
+3. 100% clean Ubuntu 11.10 install. (I mean it!)
+
+Instructions:
+
 1. Install ubuntu 11.10
 2. Setup /etc/network/interfaces (See sample below)
 3. Login as root
 4. Install git (apt-get install git)
 5. Clone scripts (git clone https://github.com/managedit/openstack-setup.git)
-6. Edit "settings" to suit.. (or create settings.local with overrides)
+6. Edit "settings" to suit.. (or better yet, create settings.local and copy the settings you want to change in there.)
 7. Run: ./all-in-one.sh
 8. ...
 9. Profit!
