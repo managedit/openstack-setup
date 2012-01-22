@@ -22,6 +22,7 @@ sed -e "s,%MYSQL_NOVA_PASS%,$MYSQL_NOVA_PASS,g" -i nova.conf
 sed -e "s,%FIXED_RANGE_MASK%,$FIXED_RANGE_MASK,g" -i nova.conf
 sed -e "s,%FIXED_RANGE_NET%,$FIXED_RANGE_NET,g" -i nova.conf
 sed -e "s,%FIXED_RANGE%,$FIXED_RANGE,g" -i nova.conf
+sed -e "s,%LIBVIRT_TYPE%,$LIBVIRT_TYPE,g" -i nova.conf
 
 cp nova.conf api-paste-keystone.ini /etc/nova/
 
