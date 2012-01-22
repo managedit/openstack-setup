@@ -5,17 +5,6 @@
 
 apt-get install -y nova-api nova-compute nova-network python-keystone python-mysqldb mysql-client curl
 
-# Check for kvm (hardware based virtualization).  If unable to initialize
-# kvm, we drop back to the slower emulation mode (qemu).  Note: many systems
-# come with hardware virtualization disabled in BIOS.
-if [[ "$LIBVIRT_TYPE" == "kvm" ]]; then
-    modprobe kvm || true
-    if [ ! -e /dev/kvm ]; then
-        echo "WARNING: Switching to QEMU"
-        LIBVIRT_TYPE=qemu
-    fi
-fi
-
 # Nova Setup
 sed -e "s,999888777666,$SERVICE_TOKEN,g" api-paste-keystone.ini.tmpl > api-paste-keystone.ini
 

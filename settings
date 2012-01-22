@@ -40,6 +40,17 @@ then
   . settings.local
 fi
 
+# Check for kvm (hardware based virtualization).  If unable to initialize
+# kvm, we drop back to the slower emulation mode (qemu).  Note: many systems
+# come with hardware virtualization disabled in BIOS.
+if [[ "$LIBVIRT_TYPE" == "kvm" ]]; then
+    modprobe kvm || true
+    if [ ! -e /dev/kvm ]; then
+        echo "WARNING: Switching to QEMU"
+        LIBVIRT_TYPE=qemu
+    fi
+fi
+
 # Dont change anything below here!
 FIXED_RANGE="${FIXED_RANGE_NET}/${FIXED_RANGE_BITS}"
 export NOVA_PROJECT_ID="admin" # Tenant
