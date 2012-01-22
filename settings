@@ -46,7 +46,6 @@ fi
 if [[ "$LIBVIRT_TYPE" == "kvm" ]]; then
     modprobe kvm || true
     if [ ! -e /dev/kvm ]; then
-        echo "WARNING: Switching to QEMU"
         LIBVIRT_TYPE=qemu
     fi
 fi
