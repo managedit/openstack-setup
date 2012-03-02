@@ -4,7 +4,6 @@
 --state_path=/var/lib/nova
 --lock_path=/var/lock/nova
 --force_dhcp_release=True
---use_deprecated_auth
 --verbose
 --sql_connection=mysql://nova:%MYSQL_NOVA_PASS%@%MYSQL_HOST%/nova
 --public_interface=%PUBLIC_INTERFACE%
@@ -19,7 +18,6 @@
 --vncproxy_url=http://%HOST_IP%:6080
 --ajax_console_proxy_url=http://%HOST_IP%:8000
 --glance_api_servers=%HOST_IP%:9292
---ec2_dmz_host=%HOST_IP%
 --s3_dmz=%HOST_IP%
 --ec2_host=%HOST_IP%
 --s3_host=%HOST_IP%
@@ -30,3 +28,5 @@
 --fixed_range=%FIXED_RANGE%
 --keystone_ec2_url=http://%HOST_IP%:5000/v2.0/ec2tokens
 --multi_host=True
+--send_arp_for_ha=True
+--libvirt_type=%LIBVIRT_TYPE%

@@ -2,20 +2,27 @@
 
 These scripts install+setup OpenStack (an all in one server, or all bar compute + compute nodes).
 
-**This only suports VLAN networking where each server has 2x network cards**  
-It could be changed for others, but out of the box, thats what it does.
+# Assumptions:
 
-NOTE: These scripts do NOT secure your setup. Every service connects to MySQL as root, The default RabbitMQ account is used etc. Is is **your** job to handle that kind of stuff after you have a quick and dirty, but working install done.
+1. You want to use the VLAN network manager. (NOTE: The requires VLAN capable switches!)
+2. You want to use multi-node networking (NOTE: This is *very* different to simply having multiple compute nodes. Read up on it.)
+3. You want to use 2 network cards in every server (1 for public traffic, 1 for nova's internal traffic)
+4. You are installing on 100% clean Ubuntu 11.10 servers (i.e. you have *never* attempted to install OpenStack on these servers since the last time they were wiped)
 
+If these assumptions are not valid for your setup, these scripts will not work and have not been tested. They could be changed for others, but out of the box, that is simply what they do.
+
+NOTE: These scripts do NOT secure your setup. eg the default RabbitMQ "guest" account is used etc. Is is **your** job to handle that kind of stuff after you have a quick and dirty, but working install done.
 
 # All in one server (You can add more later...)
+
+Instructions:
 
 1. Install ubuntu 11.10
 2. Setup /etc/network/interfaces (See sample below)
 3. Login as root
 4. Install git (apt-get install git)
 5. Clone scripts (git clone https://github.com/managedit/openstack-setup.git)
-6. Edit "settings" to suit.. (or create settings.local with overrides)
+6. Edit "settings" to suit.. (or better yet, create settings.local and copy the settings you want to change in there.)
 7. Run: ./all-in-one.sh
 8. ...
 9. Profit!

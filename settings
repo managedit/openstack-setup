@@ -3,10 +3,13 @@
 # from there, allowing you to `git pull` without conflicts!         #
 #####################################################################
 
+# General Settings
+LIBVIRT_TYPE=${LIBVIRT_TYPE:-kvm} # Currently supports kvm or qemu
+
 # MySQL Server Settings
 MYSQL_HOST="127.0.0.1"
 MYSQL_ROOT_PASS="letmein"
-MYSQL_NOVA_PSSS="letmeinN"
+MYSQL_NOVA_PASS="letmeinN"
 MYSQL_GLANCE_PASS="letmeinG"
 MYSQL_KEYSTONE_PASS="letmeinK"
 MYSQL_HORIZON_PASS="letmeinH"
@@ -26,7 +29,7 @@ FIXED_RANGE_NET="172.16.0.0"
 FIXED_RANGE_BITS="12"
 FIXED_RANGE_MASK="255.240.0.0"
 FIXED_RANGE_NETWORK_SIZE="256"
-FIXED_RANGE_NETWROK_COUNT="16"
+FIXED_RANGE_NETWORK_COUNT="16"
 
 # Misc
 REGION="nova"             # Region name - "nova" is the default, and probably the most reliable withoit extra setup!
@@ -35,6 +38,16 @@ REGION="nova"             # Region name - "nova" is the default, and probably th
 if [ -f settings.local ]
 then
   . settings.local
+fi
+
+# Check for kvm (hardware based virtualization).  If unable to initialize
+# kvm, we drop back to the slower emulation mode (qemu).  Note: many systems
+# come with hardware virtualization disabled in BIOS.
+if [[ "$LIBVIRT_TYPE" == "kvm" ]]; then
+    modprobe kvm || true
+    if [ ! -e /dev/kvm ]; then
+        LIBVIRT_TYPE=qemu
+    fi
 fi
 
 # Dont change anything below here!

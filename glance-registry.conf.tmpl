@@ -3,7 +3,7 @@
 verbose = True
 
 # Show debugging output in logs (sets DEBUG log level output)
-debug = True
+debug = False
 
 # Address to bind the registry server
 bind_host = 0.0.0.0
@@ -44,8 +44,6 @@ api_limit_max = 1000
 limit_param_default = 25
 
 [pipeline:glance-registry]
-#pipeline = context registryapp
-# NOTE: use the following pipeline for keystone
 pipeline = authtoken keystone_shim context registryapp
 
 [app:registryapp]

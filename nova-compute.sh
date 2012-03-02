@@ -3,7 +3,7 @@
 # Settings
 . settings
 
-apt-get install -y nova-api nova-compute nova-network python-keystone python-mysqldb mysql-client curl dnsmasq bridge-utils
+apt-get install -y nova-api nova-compute nova-network python-keystone python-mysqldb mysql-client curl
 
 # Nova Setup
 sed -e "s,999888777666,$SERVICE_TOKEN,g" api-paste-keystone.ini.tmpl > api-paste-keystone.ini
@@ -18,13 +18,7 @@ sed -e "s,%MYSQL_NOVA_PASS%,$MYSQL_NOVA_PASS,g" -i nova.conf
 sed -e "s,%FIXED_RANGE_MASK%,$FIXED_RANGE_MASK,g" -i nova.conf
 sed -e "s,%FIXED_RANGE_NET%,$FIXED_RANGE_NET,g" -i nova.conf
 sed -e "s,%FIXED_RANGE%,$FIXED_RANGE,g" -i nova.conf
-
-# Fix dnsmasq
-sed -e "s,ENABLED=1,ENABLED=0,g" -i /etc/default/dnsmasq
-
-killall dnsmasq
-sleep 1
-killall -9 dnsmasq
+sed -e "s,%LIBVIRT_TYPE%,$LIBVIRT_TYPE,g" -i nova.conf
 
 cp nova.conf api-paste-keystone.ini /etc/nova/
 chown nova:nova /etc/nova/nova.conf /etc/nova/api-paste-keystone.ini
